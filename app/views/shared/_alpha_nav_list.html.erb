@@ -1,0 +1,11 @@
+<ul>
+  <% ('A'..'Z').each do |letter| -%>
+    <li class='nav'>
+      <% if counts[letter] > 0 %>
+          <%= link_to letter, { :action => :index, :first => letter }  %>
+      <% else -%>
+          <%= letter -%>
+      <% end -%>
+    </li>
+  <% end -%>
+</ul>

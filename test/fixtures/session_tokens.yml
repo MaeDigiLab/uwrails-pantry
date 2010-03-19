@@ -1,0 +1,24 @@
+# == Schema Information
+# Schema version: 20100316044213
+#
+# Table name: session_tokens
+#
+#  id         :integer         not null, primary key
+#  token      :string(255)
+#  user_id    :integer
+#  expiration :datetime
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+active_session:
+  token: aactivesessiontoken
+  user_id: 1
+  expiration: 2.hours.from_now
+  
+expired_session:
+  token: anexpiredsessiontoken
+  user_id: 2
+  expiration: 2.hours.ago

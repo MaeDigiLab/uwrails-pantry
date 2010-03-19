@@ -1,0 +1,13 @@
+################################################################################
+
+PROJECT PANTRY
+
+################################################################################
+
+This is my final project for UW-Rails Winter 2010 quarter.  Pantry is a web app
+for creating a recipe and assembling a set of foods as ingredients to that
+recipe.
+
+Unit and Functional tests created and 100% passing. 
+
+(c) Chris Lihosit 2010.

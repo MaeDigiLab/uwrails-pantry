@@ -1,0 +1,29 @@
+# == Schema Information
+# Schema version: 20100316044213
+#
+# Table name: users
+#
+#  id                  :integer         not null, primary key
+#  screen_name         :string(255)
+#  email               :string(255)
+#  pw                  :string(255)
+#  login_count         :integer         default(0)
+#  login_failure_count :integer         default(0)
+#  last_login_ip       :string(255)     default("")
+#  last_login_at       :datetime
+#  created_at          :datetime
+#  updated_at          :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+john_smith:
+  screen_name: JohnSmith
+  email: john@smith
+  pw: password
+
+
+jane_doe:
+  screen_name: JaneDoe
+  email: jane@doe
+  pw: secret

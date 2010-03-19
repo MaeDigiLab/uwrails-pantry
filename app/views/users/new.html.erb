@@ -1,0 +1,39 @@
+<div class="row">
+<div class="column grid_3">
+&nbsp;
+</div>
+<div class="column grid_6">
+<h2>Create a new User</h2>
+
+<% form_for @user, \
+            :url => { :controller => :users, :action => :create } \
+            do |form| %>
+
+<%= form.error_messages %>
+
+<dl>
+
+  <dt>Screen Name:</dt>
+    <dd>
+        <%= form.text_field :screen_name, :size => 30 %>
+    </dd>
+  <dt>Email Address:</dt>
+    <dd>
+        <%= form.text_field :email, :size => 30 %>
+    </dd>
+  <dt>Password:</dt>
+    <dd>
+        <%= form.text_field :pw, :size => 30 %>
+    </dd>
+  <dt></dt>
+    <dd>
+        <%= submit_tag 'Become a User of the Pantry' %>
+    </dd>
+</dl>
+
+<% end %>
+</div>
+<div class="column grid_3">
+&nbsp;
+</div>
+</div>

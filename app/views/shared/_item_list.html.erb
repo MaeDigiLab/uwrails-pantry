@@ -1,0 +1,9 @@
+<ul class="list_nav" id="ingredient_list">
+<% list.each do |item| -%>
+
+  <% domid = "ing_#{item.id}" %>
+  <li class="list_item" id="<%= domid %>"><%= item.name -%></li>
+  <%= draggable_element( domid, :ghosting => true, :revert => true) %>
+
+<% end -%>
+</ul>

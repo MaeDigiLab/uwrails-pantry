@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20100316044213
+#
+# Table name: ingredients
+#
+#  id         :integer         not null, primary key
+#  quantity   :integer
+#  recipe_id  :integer
+#  foods_id   :integer
+#  unit_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value

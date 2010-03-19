@@ -1,0 +1,38 @@
+<%#  THIS IS THE RECIPE LIST OF INGREDIENTS PAGE %>
+<div class="row">
+  <div class="column grid_6">
+    <h2><%= @recipe.recipe_name%></h2>
+    <%= link_to "Add ingredients to this recipe", { :controller=> :recipes, :action => :edit } %>
+  </div>
+  <div class="column grid_6">
+    <ul>
+      <li>As Created by: <%= @recipe.chef %></li>
+      <li>Source: <%= @recipe.source %>
+      <li><%= link_to "Back to Recipes", { :controller => :recipes, :action => :index } %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column grid_12">
+  <p><%= @recipe.ingredients.count %> Ingredient<%= 's' if @recipe.ingredients.count > 1 %></p>
+  <table>
+  <thead>
+  <tr>
+  <td>#</td>
+  <td>Units</td>
+  <td>Food</td>
+  </tr>
+  </thead>
+  <tbody>
+    <% @recipe.ingredients.each do |ingredient| %>
+    <tr>
+    <td><%= ingredient.quantity %></td>
+    <td><%= ingredient.units %></td>
+    <td><%= ingredient.name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+  </div>
+</div>

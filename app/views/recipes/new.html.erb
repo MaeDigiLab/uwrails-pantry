@@ -1,0 +1,40 @@
+<div class="row">
+<div class="column grid_3">
+  &nbsp;
+</div>
+<div class="column grid_6">
+<h2>Create a new Recipe</h2>
+
+<% form_for :recipe, \
+            :url => { :controller => :recipes, :action => :create } \
+            do |form| %>
+
+<%= form.error_messages %>
+
+<dl>
+  <dt>Recipe Name:</dt>
+    <dd>
+        <%= form.text_field :recipe_name, :size => 30 %>
+    </dd>
+  <dt>Chef:</dt>
+    <dd>
+        <%= form.text_field :chef, :size => 30 %>
+    </dd>
+  <dt>Source:</dt>
+    <dd>
+        <%= form.text_field :source, :size => 30 %>
+    </dd>
+  <dt></dt>
+    <dd>
+        <%= submit_tag "Save Recipe" %>
+    </dd>
+</dl>
+
+<% end %>
+
+<%= link_to "Cancel Making a Recipe", :controller => :recipes, :action => :index %>  
+</div>
+<div class="column grid_3">
+  &nbsp;
+</div>
+</div>

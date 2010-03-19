@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="column grid_6">
+    <h2>Recipes Controller - GET: Index</h2>
+  </div>
+  <div class="column grid_6">
+    <ul>
+      <li>Hello, <%= @user.screen_name %>!</li>
+      <li><%= link_to "Log-out", { :controller => :login, :action => :destroy } %></li>
+    </ul>
+  </div>
+</div>  
+
+<div class="row">
+  <div class="column grid_12">
+    <ul>
+      <% if @scoped %>
+      <li><%= link_to "View Only My Recipes", :controller => :recipes, :action => :index %></li>
+      <% else %>
+      <li>My Recipes</li>
+      <% end %>
+      <li><%= link_to "View My Foods", :controller => :foods, :action => :index %></li>
+      <ul>
+        <li><%= link_to "Create New Recipe", :controller => :recipes, :action => :new %></li>
+      </ul>
+    </ul>
+  
+  
+    <%= render( "shared/alpha_nav_list", :counts => @recipe_counts ) %>
+  
+    <table>
+      <thead>
+        <tr>
+          <td>Recipe Name</td>
+          <td>Chef</td>
+          <td>Source</td>
+          <td>Created</td>
+          <td>Fat</td>
+          <td>Carbs</td>
+          <td>Protein</td>
+        </tr>
+      </thead>
+      <tbody>
+    
+      <% @list.each do |item| -%>
+          <tr>
+            <td><%= link_to item.recipe_name, { :action => :show, :id => item.id } %></td>
+            <td><%= item.chef %></td>
+            <td><%= item.source %></td>
+            <td><%= item.created_at %></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+      <% end -%>
+  
+      </tbody>
+    </table>
+  </div>
+</div>

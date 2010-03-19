@@ -1,0 +1,48 @@
+<div class="row">
+<div class="column grid_3">
+  &nbsp;
+</div>
+<div class="column grid_6">
+<h2>Home Controller - GET: Index</h2>
+
+<% form_for :user, \
+            :url => { :controller => :login, :action => :create } \
+            do |form| %>
+
+<dl>
+
+  <% if flash[:error] %>
+  <dt class='error'>Error!</dt>
+    <dd class='error'><%= flash[:error] %></dd>
+  <% end %>
+
+  <% if flash[:message] %>
+  <dt class='msg'>Goodbye!</dt>
+    <dd class='msg'><%= flash[:message] %></dd>
+  <% end %>
+
+  <dt>Email Address:</dt>
+    <dd>
+        <%= form.text_field :email, :size => 30 %>
+    </dd>
+  <dt>Password:</dt>
+    <dd>
+        <%= form.text_field :pw, :size => 30 %>
+    </dd>
+  <dt></dt>
+    <dd>
+        <%= submit_tag 'Sign In to the Pantry' %>
+    </dd>
+</dl>
+
+<% end %>
+
+<ul>
+  <li><%= link_to "I can haz a Uzer Account?", { :controller => :users, :action => :new } %></li>
+</ul>
+
+</div>
+<div class="column grid_3">
+  &nbsp;
+</div>
+</div>

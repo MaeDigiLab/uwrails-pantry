@@ -1,0 +1,78 @@
+body {
+  margin: 20px 0 0;
+ 	font-family: Verdana, serif;
+ 	background-color: #ccc;
+}
+
+h1, h2 {
+  font-family: Georgia;
+}
+
+h1 {
+    padding: 25px 0px;
+    font-size: 24pt;
+  }
+
+ul {
+  padding: 0;
+  margin-bottom: 20px;
+  display: block;
+}
+  
+li {
+    font-size: 8.5pt;
+    list-style-type: none; 
+    line-height: 1.5em;
+    padding: 0px 10px 5px 0px;
+    display: inline;
+}  
+
+.nav {
+    display: inline;
+}  
+
+li.list_item {
+    display: block;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 2px;
+    background: #F00;
+}
+
+
+dt {
+    font-size: 8pt;
+    font-weight: bold;
+    padding-top: 10px;
+  }
+  
+dd {
+    margin: 0px;
+    padding: 0px;
+  } 
+
+table {
+    width: 100%
+  }
+
+thead {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    font-size: 9pt
+  } 
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 9pt;
+  }
+  
+input {
+    font-size: 18pt;
+    padding-bottom: 10px;
+  }
+
+p {
+    font-size: 10pt;
+    padding: 5px 0px;
+  }

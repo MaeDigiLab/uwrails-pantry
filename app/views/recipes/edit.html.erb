@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="column grid_6">
+    <h2><%= @recipe.recipe_name%></h2>
+  </div>
+  <div class="column grid_6">
+    <ul>
+      <li>As Created by: <%= @recipe.chef %></li>
+      <li>Source: <%= @recipe.source %>
+      <li><%= link_to "Back to Recipes", { :controller => :recipes, :action => :index } %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column grid_6" id="recipe">
+  <p><%= @recipe.ingredients.count %> Ingredient<%= 's' if @recipe.ingredients.count > 1 || @recipe.ingredients.count == 0 %></p>
+  <table>
+  <thead>
+  <tr>
+  <td>#</td>
+  <td>Units</td>
+  <td>Food</td>
+  </tr>
+  </thead>
+  <tbody>
+    <% @recipe.ingredients.each do |ingredient| %>
+    <tr>
+    <td><%= ingredient.quantity %></td>
+    <td><%= ingredient.units %></td>
+    <td><%= ingredient.name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+
+  <%= drop_receiving_element( 'recipe', \
+                              :accept => 'ingredients',
+                              :complete => "$('spinner').hide();",
+                              :before => "$('spinner').show();",
+                              :hoverclass => 'hover',
+                              :with => "'ing=' + encodeURIComponent(element.id.split('_').last())",
+                              :url => {:action => :add_ingredient, :id=> @recipe })%>
+
+  </div>
+
+  <div class="column grid_6" id="ingredients">
+    <%= render( "shared/alpha_nav_list", :counts => @food_counts ) %>
+    
+    <%= render( "shared/item_list", :list => @list ) %>
+
+  </div>
+
+</div>

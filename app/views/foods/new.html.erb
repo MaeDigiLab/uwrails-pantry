@@ -1,0 +1,40 @@
+<div class="row">
+<div class="column grid_3">
+  &nbsp;
+</div>
+<div class="column grid_6">
+<h2>Foods Controller: GET new</h2>
+
+<% form_for :food, \
+            :url => { :controller => :foods, :action => :create } \
+            do |form| %>
+
+<%= form.error_messages %>
+
+<dl>
+  <dt>Food Name:</dt>
+    <dd>
+        <%= form.text_field :food_name, :size => 30 %>
+    </dd>
+  <dt>Serving Size:</dt>
+    <dd>
+        <%= form.text_field :serving_size, :size => 2 %> <%= collection_select(:food, :unit_id, Unit.all, :id, :unit_name) %>
+    </dd>
+  <dt>Serving in Grams:</dt>
+    <dd>
+        <%= form.text_field :serving_in_grams, :size => 3 %>
+    </dd>
+  <dt></dt>
+    <dd>
+        <%= submit_tag "Save Food" %>
+    </dd>
+</dl>
+
+<% end %>
+
+<%= link_to "Cancel Making a Food", :controller => :foods, :action => :index %>  
+</div>
+<div class="column grid_3">
+&nbsp;
+</div>
+</div>
